@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --header-text: black;
+    --header-bg: #ECECEC;
+    --main-text: #487AA1;
+    --main-text-highlight: #B2D9F7;
+    --main-bg: #487AA1;
+    --main-edit-icon:#487AA1;
+    --main-edit-icon-bg:#B2D9F7;
+    --main-delete-icon:#A14848;
+    --main-delete-icon-bg:#F7B2B2;
+
+}
+.darkmode{
+    --header-text: white;
+    --header-bg: #454F59;
+    --main-text:white;
+    --main-text-highlight: #606d79;
+    --main-bg: #161A1D;
+    --main-edit-icon:#487AA1;
+    --main-edit-icon-bg:#B2D9F7;
+    --main-delete-icon:#A14848;
+    --main-delete-icon-bg:#F7B2B2;
+}
+
+a{
+    cursor: pointer;
+}
+header svg{
+    fill: var(--header-text);
+}
+main svg{
+    fill: var(--main-text);
+}
+body{
+    background-color: var(--main-bg);
+    width:100vw;
+    height: 100vh;
+    margin-bottom: 80px;
+}
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    height: 80px;
+    width: 100%;
+    padding: 0 32px;
+    margin-bottom: 40px;
+    color: var(--header-text);
+}
+header img{
+    width: 24px;
+    height: 24px;
+}
+header .logo{
+    display:flex;
+    gap: 8px;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    gap:16px;
+}
+
+main{
+    padding: 0 16px;
+    width:100vw;
+    height:calc(100vh - 160px);
+    color: var(--main-text);
+}
+
+.addListContainer{
+    margin-bottom: 20px;
+}
+.addListContainer input[type="text"]{
+    border: 1px solid var(--main-text-highlight);
+    color: var(--main-text-highlight);
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    &::placeholder{
+        color:var(--main-text-highlight);
+    }
+}
+.addListContainer button{
+    border: 1px solid var(--main-text-highlight);
+    color: var(--main-text-highlight);
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+
+    &:hover{
+        color: var(--main-text);
+        background-color: var(--main-text-highlight);
+        cursor: pointer;
+    }
+
+}
+
+.listContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.listContainer .list{
+    padding: 16px;
+    background-color: var(--header-bg);
+    border-radius: 8px;
+    max-width: 400px;
+    width:100%;
+    height: 400px;
+    flex-direction: column;
+    overflow-y:auto;
+}
+
+
+.listContainer .addItemContainer{
+    display:flex;
+    gap:8px;
+    width: 100%;
+}
+
+.listContainer .addItemContainer input[type="text"]{
+    border: 1px solid var(--main-text);
+    color: var(--main-text);
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width:100%;
+
+
+    &::placeholder{
+        color:var(--main-text);
+    }
+}
+
+.listContainer .addItemContainer .addItem{
+    padding: 8px 16px;
+    border: 1px solid var(--main-text);
+    background-color:transparent;
+    color: var(--main-text);
+    border-radius: 8px;
+
+    &:hover{
+        background-color: var(--main-text-highlight);
+        cursor: pointer;
+    }
+}
+
+.listContainer .list .titleContainer .title{
+    font-weight: bold;
+}
+
+.listContainer .list .titleContainer{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    & .icons{
+        display:flex;
+        gap:8px;
+    }
+}
+.listContainer .list .checkableItem{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+
+    & p{
+        flex: 1;
+    }
+}
+
+.listContainer .list  button{
+    display: flex;
+    padding: 2px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: transparent;
+    
+    & img{
+        width: 16px;
+    }
+}
+.listContainer .list  .edit:hover{
+    background-color: var(--main-edit-icon-bg);
+    cursor: pointer;
+    & svg{
+        fill: var(--main-edit-icon);
+    }
+}
+.listContainer .list  .trash:hover{
+    background-color: var(--main-delete-icon-bg);
+    cursor: pointer;
+    & svg{
+        fill: var(--main-delete-icon);
+    }
+}
+
+
+
+#theme-switch svg:first-child{
+    display:block;
+}
+#theme-switch svg:last-child{
+    display:none;
+}
+.darkmode #theme-switch svg:first-child{
+    display:none;
+}
+.darkmode #theme-switch svg:last-child{
+    display:block;
+}
+
+.input-edit-mode{
+    background-color: transparent;
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-bottom: 1px solid var(--main-text);
+    color: var(--main-text);
+}
